@@ -1,8 +1,11 @@
+// A demo sketch to test out fx(hash). The outputs of this sketch are unique to each address
+
 const numPoints = Math.floor(4 + $fx.randminter() * 20);
 const strokeColor = {r: $fx.randminter()*255,g: $fx.randminter()*255,b: $fx.randminter()*255}
 
 function setup() {
-    createCanvas(400, 400);
+    let cnv = createCanvas(400, 400);
+    cnv.id("my-canvas");
     textAlign(CENTER);
     noLoop();
 }
@@ -26,18 +29,4 @@ function draw() {
     endShape(CLOSE)
     noStroke()
     fill(255, 0, 0)
-    //text($fx.minter, width/2, height - 10)
 }
-
-// function windowResized() {
-//     resizeCanvas(windowWidth, windowHeight);
-// }
-
-
-
-// $fx.features({
-//     "A random feature": Math.floor($fx.rand() * 10),
-//     "A random boolean": $fx.rand() > 0.5,
-//     "A random string": ["A", "B", "C", "D"].at(Math.floor($fx.rand() * 4)),
-//     "Feature from params, its a number": $fx.getParam("number_id"),
-//   })
